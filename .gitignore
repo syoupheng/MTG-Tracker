@@ -1,0 +1,26 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+local_settings.py
+.env
+
+# Backup files # 
+*.bak 
+
+# Python # 
+*.py[cod] 
+*$py.class
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
