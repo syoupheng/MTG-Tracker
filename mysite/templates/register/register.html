@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Please log out to access this page !</p>
+    {% else %}
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type:"submit" class="btn btn-success">Register</button>
+        </form>
+    {% endif %}
+{% endblock %}
