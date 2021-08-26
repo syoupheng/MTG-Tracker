@@ -39,9 +39,9 @@ Now that your application is connected to your database you can create the table
 
 `python3 manage.py migrate`
 
-Some tables need to be pre-populated so you will have to load the data fixtures by using this command:
+Some tables need to be pre-populated so you will have to load the data fixtures by using this command (the fixture file is located at mysite/MTG_Tracker/fixtures):
 
-`python3 manage.py loaddata `
+`python3 manage.py loaddata ExpansionFixtures.json`
 
 ## 5) Generating a secret key
 
@@ -49,18 +49,10 @@ You will need to generate a secret key to enter in your **settings.py**. In orde
 
 ## 6) Starting the server
 
-To launch the server provided by Laravel run this command :
+To launch the server provided by Django run this command you can choose a different port number than 8000:
 
-`php artisan serve`
+`python3 manage.py runserver 8000`
 
-You can access the application by typing this address in your browser : 
+You can now access the application by typing this address in your browser : 
 
-`localhost:<your_port_number>`
-
-Your port number (usually 8000) is the last number that was displayed when you used the last command.
-
-## 7) How to use this application
-
-Congratulations ! You have now access to this application ! You can create a normal account but if you want to be able to delete establishements or comments you will need admin privileges. To get admin privileges you can login with **admin@gmail.com** and the password **admin**. Another method is to create a new admin user with the **UserSeeder.php** file located at **/laravel/database/seeders/**. You can enter your email and password and other infos but make sure that the user you want to insert in the database has an admin role in the UserSeeder.php file then run this command :
-
-`php artisan db:seed --class=UserSeeder`
+`localhost:8000`
