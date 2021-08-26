@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>Modifiez vos résultats de draft:</h3>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+{% endblock %}

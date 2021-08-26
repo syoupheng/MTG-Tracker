@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>Ajoutez vos résultats de draft:</h3>
+<form method="POST" enctype="multipart/form-data" class="form-group">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+<br>
+{% if excel_error %}
+    <div class="alert alert-danger" role="alert">
+        {{ excel_error }}
+    </div>
+{% endif %}
+<hr class="mt-0 mb-4">
+{% if draft_results %}
+    <div>
+        <h3 class="table-caption">Liste des resultats</h3>
+        <table class="table table-bordered table-hover table-responsive">
+            <caption></caption>
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Titre du deck</th>
+                    <th scope="col">Couleurs</th>
+                    <th scope="col">Expansion</th>
+                    <th scope="col">Nombre de victoires</th>
+                    <th scope="col">Nombre de défaites</th>
+                    <th scope="col">Supprimer</th>
+                </tr>   
+            </thead>
+            <tbody>
+            {% for draft_result in draft_results %}
+                <tr onclick="document.location.href = '{% url 'update_result' draft_result.id %}';">
+                    <td>{{ draft_result.date|date:"d/m/Y" }}</td>
+                    <td>{{ draft_result.best_of }}</td>
+                    <td>{{ draft_result.deck_title }}</td>
+                    <td>{{ draft_result.colors }}</td>   
+                    <td>{{ draft_result.expansion.name }}</td>
+                    <td>{{ draft_result.nb_wins }}</td>  
+                    <td>{{ draft_result.nb_losses }}</td>   
+                    <td><a href="{% url 'delete_result' draft_result.id %}"><i class="fas fa-times"></i></a></td>                                        
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <p>Pas de résultats</p>
+{% endif %}
+{% endblock %}

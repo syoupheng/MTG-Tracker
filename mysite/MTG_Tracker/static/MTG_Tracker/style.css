@@ -1,0 +1,101 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styling for the tables */
+
+/*.list {
+    text-align: center;
+    vertical-align: center;
+}
+
+.list, td {
+    border: solid 1px black;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}*/
+
+.table-caption {
+    text-align: center;
+}
+.fa-times {
+    color: rgb(219, 15, 15)
+}
+
+.fa-times:hover {
+    color: rgb(148, 24, 24)
+}
+
+.table td {
+    text-align: center;
+}
+
+.table th {
+    text-align: center;
+}
+
+/* Styling for the sidebar */
+
+#sidebar {
+    height: 100%;
+    width: 8.5rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden;
+    padding-top: 1em;
+}
+
+#sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: #818181;
+    font-size: 1.5 em;
+    display: block;
+}
+
+#sidebar a:hover {
+    color:#f1f1f1
+}
+
+#sidebar h3 {
+    padding: 6px 8px 6px 16px;
+    margin-top: 0;
+}
+
+/* Styling for content block */
+
+#content {
+    margin-left: 8.5rem;
+    padding: 0 10px;
+}
+
+.welcome-mess {
+    text-align: center;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+tr:hover {
+    cursor: pointer;
+}
+
+.p-center {
+    text-align: center;
+}

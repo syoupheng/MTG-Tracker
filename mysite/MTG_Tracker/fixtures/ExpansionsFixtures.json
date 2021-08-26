@@ -1,0 +1,47 @@
+[
+    {
+        "model": "MTG_Tracker.Expansion",
+        "pk": 1,
+        "fields": {
+            "code": "ZKR",
+            "name": "Zendikar Rising",
+            "release_date": "2020-09-25"
+        }
+    },
+    {
+        "model": "MTG_Tracker.Expansion",
+        "pk": 2,
+        "fields": {
+            "code": "ELD",
+            "name": "Throne of Eldraine",
+            "release_date": "2019-10-04"
+        }
+    },
+    {
+        "model": "MTG_Tracker.Expansion",
+        "pk": 3,
+        "fields": {
+            "code": "IKO",
+            "name": "Ikoria: Lair of the Behemoths",
+            "release_date": "2020-04-17"
+        }
+    },
+    {
+        "model": "MTG_Tracker.Expansion",
+        "pk": 4,
+        "fields": {
+            "code": "TBD",
+            "name": "Theros Beyond Death",
+            "release_date": "2020-01-24"
+        }
+    },
+    {
+        "model": "MTG_Tracker.Expansion",
+        "pk": 5,
+        "fields": {
+            "code": "M20",
+            "name": "Magic 20",
+            "release_date": "2019-07-12"
+        }
+    }
+]
