@@ -55,7 +55,7 @@ def updateDraftResult(request, draft_result_id):
     user = request.user
     dr = DraftResult.objects.get(id=draft_result_id)
     if dr.user != user:
-        return HttpResponseRedirect('/myresults')
+        return HttpResponse('Unauthorized', status=401)
     if request.method == 'POST':
         form = DraftResultForm(request.POST, instance=dr)
         # check whether it's valid:
@@ -74,4 +74,7 @@ def deleteDraftResult(request, draft_result_id):
     dr = DraftResult.objects.get(id=draft_result_id)
     if dr.user == user:
         dr.delete()
+    else:
+        return HttpResponse('Unauthorized', status=401)
+
     return HttpResponseRedirect('/myresults')
