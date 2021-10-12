@@ -76,5 +76,4 @@ def deleteDraftResult(request, draft_result_id):
         dr.delete()
     else:
         return HttpResponse('Unauthorized', status=401)
-
     return HttpResponseRedirect('/myresults')

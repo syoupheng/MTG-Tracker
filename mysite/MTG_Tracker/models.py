@@ -27,3 +27,6 @@ class DraftResult(models.Model):
                                                 MaxValueValidator(3, message="Le nombre de victoires ne peut être supérieur à 3 !")])
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     colors = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.deck_title + " (" + str(self.date) + ")"
