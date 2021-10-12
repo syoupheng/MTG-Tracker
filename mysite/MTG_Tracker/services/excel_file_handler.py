@@ -7,8 +7,11 @@ from .. import models
 
 def excelFileHandler(file, user):
     try:
-        df = pd.read_excel(file, sheet_name="Sheet1")
-    except ValueError:
+        print("hello")
+        df = pd.read_excel(file, header=0)
+        print(df)
+    except ValueError as e:
+        print(e)
         return []
     # Removes empty rows and columns
     df = df.dropna(axis=1, how="all")
@@ -16,10 +19,9 @@ def excelFileHandler(file, user):
     if len(df.columns) != 7:
         return []
     df.columns=["date", "best_of", "deck_title", "nb_wins", "nb_losses", "colors", "expansion_id"]
+    print(df)
     draft_results = []
-    exp_codes = []
-    for expansion in models.Expansion.objects.all():
-        exp_codes.append(expansion.code)
+    exp_codes = [expansion.code for expansion in models.Expansion.objects.all()]
     for i in range(len(df.index)):
         row = df.iloc[i]
         if row["expansion_id"] in exp_codes:
@@ -40,6 +42,7 @@ def excelFileHandler(file, user):
             new_result.full_clean()
             draft_results.append(new_result)
         except ValidationError as e:
+            print(e)
             draft_results = []
             break
     return draft_results

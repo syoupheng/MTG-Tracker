@@ -4,11 +4,11 @@ from django.db import migrations
 
 def add_expansion(apps, schema_editor):
     expansions = {
-        "ZKR":["Zendikar Rising", "25/09/2020"],
-        "ELD":["Throne of Eldraine", "4/10/2019"],
-        "IKO":["Ikoria: Lair of the Behemoths", "17/04/2020"],
-        "TBD":["Theros Beyond Death", "24/01/2020"],
-        "M20":["Magic 2020", "12/07/2019"],
+        "ZKR":["Zendikar Rising", "2020-09-25"],
+        "ELD":["Throne of Eldraine", "2019-10-04"],
+        "IKO":["Ikoria: Lair of the Behemoths", "2020-04-17"],
+        "TBD":["Theros Beyond Death", "2020-01-24"],
+        "M20":["Magic 2020", "2019-07-12"],
     }
     Expansion = apps.get_model('MTG_Tracker', 'Expansion')
     for expansion_code in expansions:
@@ -18,7 +18,7 @@ def add_expansion(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('MTG_Tracker', '0001_initial'),
+        ('MTG_Tracker', '0002_expansion_release_date'),
     ]
 
     operations = [

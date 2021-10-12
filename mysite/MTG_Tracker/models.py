@@ -21,7 +21,8 @@ class DraftResult(models.Model):
     expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
     best_of = models.CharField(max_length=5, choices=FORMAT_CHOICES, default='BO1')
     deck_title = models.CharField(max_length=100, null=True)
-    nb_wins = models.IntegerField(validators=[MaxValueValidator(7, message="Le nombre de victoires ne peut être supérieur à 7 !")])
+    nb_wins = models.IntegerField(validators=[MinValueValidator(0, message="Le nombre de victoires ne peut être inférieur à 0 !"),
+                                                MaxValueValidator(7, message="Le nombre de victoires ne peut être supérieur à 7 !")])
     nb_losses = models.IntegerField(validators=[MinValueValidator(0, message="Le nombre de défaites ne peut être inférieur à 0 !"),
                                                 MaxValueValidator(3, message="Le nombre de victoires ne peut être supérieur à 3 !")])
     user = models.ForeignKey(User, on_delete=models.CASCADE)

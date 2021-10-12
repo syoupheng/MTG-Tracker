@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('MTG_Tracker', '0002_auto_20210820_1858'),
+        ('MTG_Tracker', '0001_initial'),
     ]
 
     operations = [

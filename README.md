@@ -39,10 +39,6 @@ Now that your application is connected to your database you can create the table
 
 `python3 manage.py migrate`
 
-Some tables need to be pre-populated so you will have to load the data fixtures by using this command (the fixture file is located at mysite/MTG_Tracker/fixtures):
-
-`python3 manage.py loaddata ExpansionFixtures.json`
-
 ## 5) Generating a secret key
 
 You will need to generate a secret key to enter in your **settings.py**. In order to do that you can use the function provided by Django : `django.core.management.utils.get_random_secret_key()` 
